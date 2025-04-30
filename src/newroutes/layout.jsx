@@ -1,28 +1,37 @@
-export default App;
+import { useState } from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import '../styles/navbar.css';
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
-import About from "./newroutes/About";
-import Contactus from "./newroutes/Contactus";
-import Home from "./newroutes/Home";
-import Layout from "./newroutes/layout";
+function Layout() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-          
-function App() {
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    {/* Child Routes */}
-                    <Route index element={<Home />} />
-                    <Route path="about" element={<About />} />
-                    <Route path="contactus" element={<Contactus />} />
-                    <Route path="login" element={<login />} />
-                   
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <div>
+            <nav className="navbar">
+                <div className="navbar-brand">
+                    <Link to="/" className="logo">AgriMart</Link>
+                    <button className="hamburger" onClick={toggleMenu}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
+                    <Link to="/" className="nav-link">Home</Link>
+                    <Link to="/about" className="nav-link">About</Link>
+                    <Link to="/contactus" className="nav-link">Contact</Link>
+                    <Link to="/login" className="nav-link">Login</Link>
+                </div>
+            </nav>
+            <main>
+                <Outlet />
+            </main>
+        </div>
     );
 }
 
-
+export default Layout;
