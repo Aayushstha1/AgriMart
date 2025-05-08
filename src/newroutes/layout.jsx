@@ -1,36 +1,39 @@
-import { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import '../styles/navbar.css';
+import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+import "../styles/navbar.css";
 
 function Layout() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isNavOpen, setIsNavOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+    const handleNavClick = () => {
+        setIsNavOpen(false); // Close menu when a link is clicked
     };
 
     return (
-        <div>
+        <>
             <nav className="navbar">
-                <div className="navbar-brand">
-                    <Link to="/" className="logo">AgriMart</Link>
-                    <button className="hamburger" onClick={toggleMenu}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+                <div className="nav-brand">
+                    <Link to="/" onClick={handleNavClick}>AGRIMART</Link>
                 </div>
-                <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
-                    <Link to="/" className="nav-link">Home</Link>
-                    <Link to="/about" className="nav-link">About</Link>
-                    <Link to="/contactus" className="nav-link">Contact</Link>
-                    <Link to="/login" className="nav-link">Login</Link>
+                <div className={`nav-links ${isNavOpen ? 'active' : ''}`}>
+                    <Link to="/" onClick={handleNavClick}>Home</Link>
+                    <Link to="/about" onClick={handleNavClick}>About</Link>
+                    <Link to="/contactus" onClick={handleNavClick}>Contact Us</Link>
+                    <Link to="/login" onClick={handleNavClick}>Login</Link>
                 </div>
+                <button 
+                    className={`nav-toggle ${isNavOpen ? 'active' : ''}`}
+                    onClick={() => setIsNavOpen(!isNavOpen)}
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
             <main>
                 <Outlet />
             </main>
-        </div>
+        </>
     );
 }
 
