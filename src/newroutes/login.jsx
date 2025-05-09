@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/login.css';
 
 function Login() {
@@ -15,13 +16,15 @@ function Login() {
             ...prevState,
             [name]: value
         }));
-        setAttempted(false); // Reset attempted state when user types
+        setAttempted(false);
     };
 
     const moveButton = () => {
-        const randomX = Math.random() * 100 - 50; // Random value between -50 and 50
-        const randomY = Math.random() * 100 - 50; // Random value between -50 and 50
-        setButtonPosition({ x: randomX, y: randomY });
+        if (!formData.email || !formData.password) {
+            const randomX = Math.random() * 200 - 100; // Random value between -100 and 100
+            const randomY = Math.random() * 100 - 50; // Random value between -50 and 50
+            setButtonPosition({ x: randomX, y: randomY });
+        }
     };
 
     const handleSubmit = (e) => {
@@ -40,7 +43,7 @@ function Login() {
 
     const buttonStyle = {
         transform: `translate(${buttonPosition.x}px, ${buttonPosition.y}px)`,
-        transition: 'transform 0.2s ease-out'
+        transition: 'transform 0.3s ease-out'
     };
 
     return (
@@ -82,12 +85,13 @@ function Login() {
                         type="submit" 
                         className="login-button"
                         style={buttonStyle}
+                        onMouseEnter={moveButton}
                     >
                         Log In
                     </button>
                 </form>
                 <p className="signup-link">
-                    Don't have an account? <a href="/signup">Sign up</a>
+                    Don't have an account? <Link to="/signup">Sign up</Link>
                 </p>
             </div>
         </div>

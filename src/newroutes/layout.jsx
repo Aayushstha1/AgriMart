@@ -1,39 +1,56 @@
-import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
-import "../styles/navbar.css";
+import { useState, useEffect } from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import '../styles/navbar.css';
 
 function Layout() {
-    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleNavClick = () => {
-        setIsNavOpen(false); // Close menu when a link is clicked
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
 
+    // Close menu when clicking outside
+    useEffect(() => {
+        const closeMenu = (e) => {
+            if (isMenuOpen && !e.target.closest('.navbar')) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        document.addEventListener('click', closeMenu);
+        return () => document.removeEventListener('click', closeMenu);
+    }, [isMenuOpen]);
+
+    // Close menu when route changes
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [location.pathname]);
+
     return (
-        <>
+        <div className="layout-container">
             <nav className="navbar">
-                <div className="nav-brand">
-                    <Link to="/" onClick={handleNavClick}>AGRIMART</Link>
-                </div>
-                <div className={`nav-links ${isNavOpen ? 'active' : ''}`}>
-                    <Link to="/" onClick={handleNavClick}>Home</Link>
-                    <Link to="/about" onClick={handleNavClick}>About</Link>
-                    <Link to="/contactus" onClick={handleNavClick}>Contact Us</Link>
-                    <Link to="/login" onClick={handleNavClick}>Login</Link>
+                <div className="navbar-brand">
+                    <Link to="/" className="logo">AgriMart</Link>
                 </div>
                 <button 
-                    className={`nav-toggle ${isNavOpen ? 'active' : ''}`}
-                    onClick={() => setIsNavOpen(!isNavOpen)}
+                    className={`hamburger ${isMenuOpen ? 'active' : ''}`} 
+                    onClick={toggleMenu}
                 >
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
+                <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
+                    <Link to="/" className="nav-link">Home</Link>
+                    <Link to="/about" className="nav-link">About</Link>
+                    <Link to="/contactus" className="nav-link">Contact</Link>
+                    <Link to="/login" className="nav-link">Login</Link>
+                </div>
             </nav>
             <main>
                 <Outlet />
             </main>
-        </>
+        </div>
     );
 }
 
