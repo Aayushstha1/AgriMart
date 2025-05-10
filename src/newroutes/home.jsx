@@ -12,7 +12,7 @@ function Home() {
                     Experience the best of agriculture with quality and trust.
                 </p>
                 <Link to="/products" className="cta-button">
-                    Explore Products
+                    Explore Products..
                 </Link>
             </section>
 
