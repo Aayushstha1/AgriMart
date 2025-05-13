@@ -5,7 +5,8 @@ import '../styles/login.css';
 function Login() {
     const [formData, setFormData] = useState({
         email: '',
-        password: ''
+        password: '',
+        userType: 'farmer' // Default user type
     });
     const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 });
     const [attempted, setAttempted] = useState(false);
@@ -20,7 +21,7 @@ function Login() {
     };
 
     const moveButton = () => {
-        if (!formData.email || !formData.password) {
+        if (!formData.email || !formData.password || !formData.userType) {
             const randomX = Math.random() * 200 - 100; // Random value between -100 and 100
             const randomY = Math.random() * 100 - 50; // Random value between -50 and 50
             setButtonPosition({ x: randomX, y: randomY });
@@ -31,7 +32,7 @@ function Login() {
         e.preventDefault();
         setAttempted(true);
 
-        if (!formData.email || !formData.password) {
+        if (!formData.email || !formData.password || !formData.userType) {
             moveButton();
             return;
         }
@@ -51,6 +52,21 @@ function Login() {
             <div className="login-box">
                 <h2>Welcome Back</h2>
                 <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="userType">Login As</label>
+                        <select
+                            id="userType"
+                            name="userType"
+                            value={formData.userType}
+                            onChange={handleChange}
+                            className="user-type-select"
+                        >
+                            <option value="farmer">Farmer</option>
+                            <option value="dealer">Dealer</option>
+                            <option value="admin">Admin</option>
+                            <option value="delivery">Delivery Boy</option>
+                        </select>
+                    </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input

@@ -105,3 +105,17 @@
 .signup-link a:hover {
     text-decoration: underline;
 }
+
+.user-type-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.user-type-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
