@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import '../styles/navbar.css';
 
@@ -44,6 +44,7 @@ function Layout() {
                     <Link to="/" className="nav-link">Home</Link>
                     <Link to="/about" className="nav-link">About</Link>
                     <Link to="/contactus" className="nav-link">Contact</Link>
+                    <Link to="../AdminDashboard" className="nav-link">Admin</Link>
                     <Link to="/login" className="nav-link">Login</Link>
                 </div>
             </nav>

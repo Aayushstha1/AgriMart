@@ -5,8 +5,9 @@ import About from "./newroutes/about";
 import Contactus from "./newroutes/contactus";
 import Home from "./newroutes/home";
 import Layout from "./newroutes/layout";
+import admin from "./newroutes/admin/AdminDashboard";
 import Login from "./newroutes/login";
-import Signup from "./newroutes/signup";
+import Signup from "./newroutes/signup";  
 
 function App() {
     return (
