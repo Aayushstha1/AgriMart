@@ -12,7 +12,7 @@ const AdminDashboard = () => {
             <li>Products</li>
             <li>Orders</li>
             <li>Reports</li>
-            <li>Settings</li>
+            <li>Setting</li>
           </ul>
         </nav>
       </div>
