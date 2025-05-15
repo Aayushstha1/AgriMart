@@ -1,13 +1,39 @@
-# React + Vite
+# 🌾 AgriMart – Agriculture E-Commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![Django](https://img.shields.io/badge/Backend-Django-green)
+![SQL](https://img.shields.io/badge/Database-SQL-orange)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
 
-Currently, two official plugins are available:
+AgriMart is a full-featured agriculture-focused e-commerce platform built for **farmers, dealers, and administrators**. It enables farmers to **buy/sell agricultural goods**, dealers to **manage stock**, and admins to **monitor and control** the overall system.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🌟 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# AgriMart" 
+- 👨‍🌾 Farmer & Dealer Registration/Login
+- 🛒 Product Listing, Add to Cart, and Checkout
+- 📦 Order Tracking and Delivery Status
+- 💬 Reviews and Feedback System
+- 🛠️ Admin Dashboard (User/Product/Order Management)
+- 🔐 Secure Authentication using JWT
+- 📊 Analytics for Admin
+- 📷 Upload Product Images
+
+---
+
+## 💻 Tech Stack
+
+| Layer        | Technology               |
+|--------------|--------------------------|
+| Frontend     | React.js, Tailwind CSS   |
+| Backend      | Django, Django REST Framework |
+| Database     | MySQL / PostgreSQL       |
+| Auth         | Django Auth + JWT        |
+| Deployment   | Vercel (Frontend), Render/Heroku (Backend) |
+
+---
+
+## 🧠 Architecture
+
