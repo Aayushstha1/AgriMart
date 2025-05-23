@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import '../styles/navbar.css';
 
-function Layout() {
+function Layouts() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -55,4 +55,4 @@ function Layout() {
     );
 }
 
-export default Layout;
+export default Layouts;

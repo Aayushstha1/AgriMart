@@ -1,8 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/home.css';
+import '../styles/Home.css';
 
-function Home() {
+function Homes() {
     return (
         <div className="home-container">
             <section className="hero-section">
@@ -45,4 +44,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Homes;
