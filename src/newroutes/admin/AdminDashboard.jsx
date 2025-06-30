@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../../styles/Dashboard.css';
 
 const AdminDashboard = () => {
-  const [activeMenu, setActiveMenu] = useState('Dashboard');
+  const [activeMenu, setActiveMenu] = useState( 'Dashboard');
   const navigate = useNavigate();
 
   const menuItems = [

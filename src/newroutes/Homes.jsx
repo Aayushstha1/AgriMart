@@ -1,7 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Home.css';
+import ProductsList from './ProductsList';
 
-function Homes() {
+function Homes({ isLoggedIn }) {
+    const navigate = useNavigate();
+
+    const handleProductClick = (product) => {
+        navigate(`/product/${product.id}`);
+    };
+
     return (
         <div className="home-container">
             <section className="hero-section">
@@ -40,6 +47,10 @@ function Homes() {
                     </p>
                 </div>
             </section>
+
+            <ProductsList
+                onProductClick={handleProductClick}
+            />
         </div>
     );
 }
