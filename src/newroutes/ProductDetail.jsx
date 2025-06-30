@@ -22,10 +22,6 @@ function ProductDetail() {
     alert(`${product.name} added to favourites!`);
   };
 
-  const handleBuyNow = () => {
-    alert(`Proceeding to buy ${product.name}!`);
-  };
-
   return (
     <div style={{
       padding: 32,
@@ -62,10 +58,7 @@ function ProductDetail() {
             borderRadius: 8,
             padding: '10px 18px',
             fontSize: 18,
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 6
+            cursor: 'pointer'
           }}
         >
           🛒 Add to Cart
@@ -79,30 +72,10 @@ function ProductDetail() {
             borderRadius: 8,
             padding: '10px 14px',
             fontSize: 18,
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 6
+            cursor: 'pointer'
           }}
         >
           ❤️ Favourite
-        </button>
-        <button
-          onClick={handleBuyNow}
-          style={{
-            background: '#1976d2',
-            color: '#fff',
-            border: 'none',
-            borderRadius: 8,
-            padding: '10px 18px',
-            fontSize: 18,
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 6
-          }}
-        >
-          🛒 Buy Now
         </button>
       </div>
     </div>

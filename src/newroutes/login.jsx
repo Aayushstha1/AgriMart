@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/login.css';
 
 function Login() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -37,9 +38,17 @@ function Login() {
             return;
         }
 
-        // If validation passes, reset button position and proceed with login
         setButtonPosition({ x: 0, y: 0 });
-        console.log('Login attempt with:', formData);
+        // Simulate login and redirect based on userType
+        if (formData.userType === 'dealer') {
+            navigate('/products');
+        } else if (formData.userType === 'admin') {
+            navigate('/AdminDashboard');
+        } else if (formData.userType === 'delivery') {
+            navigate('/delivery-dashboard');
+        } else {
+            navigate('/');
+        }
     };
 
     const buttonStyle = {
@@ -61,8 +70,7 @@ function Login() {
                             onChange={handleChange}
                             className="user-type-select"
                         >
-                            <option value="farmer">Farmer</option>
-                            <option value="dealer">Dealer</option>
+                            <option value="dealer">Customer</option>
                             <option value="admin">Admin</option>
                             <option value="delivery">Delivery Boy</option>
                         </select>

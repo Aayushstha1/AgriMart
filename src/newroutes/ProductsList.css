@@ -1,0 +1,114 @@
+.products-list {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.product-card {
+  background: #fff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  width: 220px;
+  text-align: center;
+  padding: 20px 16px 18px 16px;
+  transition: transform 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-7px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(56,142,60,0.13);
+  border-color: #388e3c;
+}
+
+.product-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.product-title {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #388e3c;
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cart-btn, .fav-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 
+    background 0.18s, 
+    color 0.18s, 
+    box-shadow 0.18s, 
+    transform 0.13s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(56,142,60,0.07);
+}
+
+.cart-btn {
+  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
+  color: #fff;
+  border: 1.5px solid #1976d2;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+}
+
+.cart-btn:hover {
+  background: linear-gradient(90deg, #1565c0 0%, #64b5f6 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 6px 18px rgba(25, 118, 210, 0.18);
+  border-color: #1565c0;
+}
+
+.fav-btn {
+  background: #fff;
+  color: #e53935;
+  border: 1.5px solid #e53935;
+}
+
+.fav-btn:hover {
+  background: #e53935;
+  color: #fff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 16px rgba(229,57,53,0.18);
+}
+
+.fav-btn.fav-btn-active {
+  background: #fff;
+  color: #e53935;
+  border: 1.5px solid #e53935;
+  animation: fav-glow 0.7s;
+}
+
+@keyframes fav-glow {
+  0% { box-shadow: 0 0 0 0 #e5393540; }
+  70% { box-shadow: 0 0 10px 8px #e5393540; }
+  100% { box-shadow: 0 0 0 0 #e5393500; }
+}
