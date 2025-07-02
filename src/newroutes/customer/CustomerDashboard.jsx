@@ -53,7 +53,7 @@ const CustomerDashboard = () => {
         <div className="header">
           <h1>Welcome back, Sir.</h1>
           <div className="customer-profile">
-            <span className="customer-name">Customer</span>
+            {/* <span className="customer-name">Customer</span> */}
             <button className="logout-btn" onClick={handleLogout}>Logout</button>
           </div>
         </div>

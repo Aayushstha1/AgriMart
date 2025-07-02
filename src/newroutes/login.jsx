@@ -41,7 +41,7 @@ function Login() {
         setButtonPosition({ x: 0, y: 0 });
         // Simulate login and redirect based on userType
         if (formData.userType === 'dealer') {
-            navigate('/products');
+            navigate('/products');   
         } else if (formData.userType === 'admin') {
             navigate('/AdminDashboard');
         } else if (formData.userType === 'delivery') {
