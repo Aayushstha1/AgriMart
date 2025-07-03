@@ -15,7 +15,7 @@ function Homes({ isLoggedIn }) {
                 <h1 className="hero-title">Welcome to AGRIMART</h1>
                 <p className="hero-subtitle">
                     Your one-stop destination for fresh, organic produce directly from local farmers.
-                    Experience the best of agriculture with quality and trust.
+                    Experience the best of agriculture with quality and trust..
                 </p>
                 <Link to="/products" className="cta-button">
                     Explore Products..
