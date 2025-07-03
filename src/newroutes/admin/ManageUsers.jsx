@@ -2,21 +2,13 @@ import { useState } from 'react';
 import '../../styles/Dashboard.css';
 
 const ManageUsers = () => {
-  const [activeTab, setActiveTab] = useState('farmers');
+  const [activeTab, setActiveTab] = useState('customers');
 
-  //  Data ..........................
+  // Data: Only customers and delivery boys
   const users = {
-    farmers: [
-      { id: 1, name: 'Farmer 1', email: 'farmer1@example.com', status: 'active' },
-      { id: 2, name: 'Farmer 2', email: 'farmer2@example.com', status: 'inactive' },
-    ],
-    dealers: [
-      { id: 1, name: 'Dealer 1', email: 'dealer1@example.com', status: 'active' },
-      { id: 2, name: 'Dealer 2', email: 'dealer2@example.com', status: 'active' },
+    customers: [
     ],
     deliveryBoys: [
-      { id: 1, name: 'Delivery Boy 1', email: 'delivery1@example.com', status: 'active' },
-      { id: 2, name: 'Delivery Boy 2', email: 'delivery2@example.com', status: 'inactive' },
     ]
   };
 
@@ -26,20 +18,13 @@ const ManageUsers = () => {
         <div className="header">
           <h1>Manage Users</h1>
         </div>
-        
         <div className="user-management">
           <div className="tabs">
             <button 
-              className={`tab-btn ${activeTab === 'farmers' ? 'active' : ''}`}
-              onClick={() => setActiveTab('farmers')}
+              className={`tab-btn ${activeTab === 'customers' ? 'active' : ''}`}
+              onClick={() => setActiveTab('customers')}
             >
-              Farmers
-            </button>
-            <button 
-              className={`tab-btn ${activeTab === 'dealers' ? 'active' : ''}`}
-              onClick={() => setActiveTab('dealers')}
-            >
-              Dealers
+              Customers
             </button>
             <button 
               className={`tab-btn ${activeTab === 'deliveryBoys' ? 'active' : ''}`}
@@ -48,7 +33,6 @@ const ManageUsers = () => {
               Delivery Boys
             </button>
           </div>
-
           <div className="users-table">
             <table>
               <thead>

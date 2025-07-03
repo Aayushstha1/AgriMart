@@ -1,43 +1,59 @@
 .products-list {
   display: flex;
-  gap: 32px;
+  gap: 40px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 32px;
+  margin-top: 40px;
+  padding: 0 24px 40px 24px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .product-card {
-  background: #fff;
+  background: linear-gradient(120deg, #f8fafc 0%, #e3f2fd 100%);
   border: 1.5px solid #e0e0e0;
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-  width: 220px;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(56,142,60,0.10), 0 2px 8px rgba(25, 118, 210, 0.06);
+  width: 270px;
+  min-height: 410px;
   text-align: center;
-  padding: 20px 16px 18px 16px;
-  transition: transform 0.18s, box-shadow 0.18s;
+  padding: 32px 18px 26px 18px;
+  transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
   cursor: pointer;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product-card:hover {
-  transform: translateY(-7px) scale(1.03);
-  box-shadow: 0 8px 32px rgba(56,142,60,0.13);
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 16px 48px rgba(56,142,60,0.17), 0 4px 16px rgba(25, 118, 210, 0.13);
   border-color: #388e3c;
+  background: linear-gradient(120deg, #e3f2fd 0%, #f8fafc 100%);
 }
 
 .product-image {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 14px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-radius: 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.09);
 }
 
 .product-title {
-  font-size: 1.2rem;
-  margin-bottom: 6px;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
   color: #222;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: color 0.18s;
+}
+
+.product-card:hover .product-title {
+  color: #1976d2;
 }
 
 .product-price {
@@ -54,7 +70,7 @@
   margin-top: 10px;
 }
 
-.cart-btn, .fav-btn {
+.cart-btn, .fav-btn, .buy-btn {
   padding: 8px 18px;
   border-radius: 8px;
   font-size: 16px;
@@ -105,6 +121,37 @@
   color: #e53935;
   border: 1.5px solid #e53935;
   animation: fav-glow 0.7s;
+}
+
+.buy-btn {
+  background: #fff;
+  color: #ff9800;
+  border: 2px solid #ff9800;
+  border-radius: 50px;
+  padding: 8px 22px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: 
+    background 0.18s, 
+    color 0.18s, 
+    border 0.18s, 
+    box-shadow 0.18s, 
+    transform 0.13s;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.10);
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.buy-btn:hover {
+  background: #ff9800;
+  color: #fff;
+  border-color: #ff9800;
+  transform: translateY(-2px) scale(1.07);
+  box-shadow: 0 6px 18px rgba(255, 152, 0, 0.18);
 }
 
 @keyframes fav-glow {
